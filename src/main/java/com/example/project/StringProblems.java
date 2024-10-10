@@ -40,7 +40,17 @@ public class StringProblems{
     // deFront("java") → "va"
     // deFront("away") → "aay"
     public String deFont(String s1){
-        return s1.substring(2);
+        String firstChar = s1.substring(0, 1);
+        String secChar = s1.substring(1, 2);
+        if (firstChar.equals("a") && secChar.equals("b")) {
+            return s1.substring(2);
+        } else if (firstChar.equals("a")) {
+            return s1.substring(1);
+        } else if (secChar.equals("b")) {
+            return s1.substring(0, 1) + s1.substring(2);
+        } else {
+            return 
+        }
     }
 
     

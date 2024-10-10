@@ -1,3 +1,4 @@
+package com.example.project;
 public class StringProblems{
     //empty constructor
     public StringProblems(){}
@@ -27,7 +28,7 @@ public class StringProblems{
         String str1End = s1.substring(s1.length() - 1);
         String s2Start = s2.substring(0, 1);
         if (str1End.equals(s2Start)) {
-            return s1.substring(0, s1.substring(s1.length() - 2)) + s2;
+            return s1.substring(0, s1.length() - 1) + s2;
         } else {
             return s1 + s2;
         }
@@ -43,13 +44,13 @@ public class StringProblems{
         String firstChar = s1.substring(0, 1);
         String secChar = s1.substring(1, 2);
         if (firstChar.equals("a") && secChar.equals("b")) {
-            return s1.substring(2);
+            return s1;
         } else if (firstChar.equals("a")) {
             return s1.substring(1);
         } else if (secChar.equals("b")) {
             return s1.substring(0, 1) + s1.substring(2);
         } else {
-            return 
+            return s1.substring(2);
         }
     }
 
@@ -68,7 +69,7 @@ public class StringProblems{
             newString = newString.substring(1);
         }
         if (lastLetter.equals("x")) {
-            newstring = newString.substring(0, newString.length() - 1);
+            newString = newString.substring(0, newString.length() - 1);
         }
         return newString;
     }

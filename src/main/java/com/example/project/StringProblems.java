@@ -9,6 +9,9 @@ public class StringProblems{
     // endsLy("y") → false
     // endsLy("oddy") → false
     public boolean endsLy(String x){
+        if (x.length() < 2) {
+            return false;
+        }
         String end = x.substring(x.length() - 2);
         if (end.equals("ly")) {
             return true;
@@ -25,10 +28,14 @@ public class StringProblems{
     // conCat("dog", "cat") → "dogcat"
     // conCat("abc", "") → "abc"
     public String conCat(String s1, String s2){
-        String str1End = s1.substring(s1.length() - 1);
-        String s2Start = s2.substring(0, 1);
-        if (str1End.equals(s2Start)) {
+        if (s1.length() > 0 && s2.length() > 0) {
+            String str1End = s1.substring(s1.length() - 1);
+            String s2Start = s2.substring(0, 1);
+            if (str1End.equals(s2Start)) {
             return s1.substring(0, s1.length() - 1) + s2;
+            } else {
+                return s1 + s2;
+            }
         } else {
             return s1 + s2;
         }
@@ -46,9 +53,9 @@ public class StringProblems{
         if (firstChar.equals("a") && secChar.equals("b")) {
             return s1;
         } else if (firstChar.equals("a")) {
-            return s1.substring(1);
-        } else if (secChar.equals("b")) {
             return s1.substring(0, 1) + s1.substring(2);
+        } else if (secChar.equals("b")) {
+            return s1.substring(1);
         } else {
             return s1.substring(2);
         }
@@ -106,11 +113,11 @@ public class StringProblems{
     // fizzString2(3) → "Fizz!"
     public String fizzString2(int x){
         if (x % 3 == 0 && x % 5 == 0) {
-            return "FizzBuzz";
+            return "FizzBuzz!";
         } else if (x % 3 == 0) {
-            return "Fizz";
+            return "Fizz!";
         } else if (x % 5 == 0) {
-            return "Buzz";
+            return "Buzz!";
         } else {
             return x + "!";
         }
